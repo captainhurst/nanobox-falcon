@@ -1,0 +1,30 @@
+
+run.config:
+  engine: python
+
+  engine.config:
+    runtime: python-3.6
+
+  # add nginx package
+  extra_packages:
+    - nginx
+
+# add a postgres database
+data.db:
+  image: nanobox/postgresql
+
+# add an elasticsearch database
+data.elasticsearch:
+  image: nanobox/elasticsearch:5
+  config:
+    cluster_name: generic_search
+
+# add a web component and give it a "start" command
+web.main:
+  start:
+    nginx: nginx -c /app/config/nginx.conf
+    falcon: python run.py
+
+# add a worker component and give it a "start" command
+# worker.main:
+#   start: node worker.js
