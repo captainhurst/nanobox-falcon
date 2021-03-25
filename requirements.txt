@@ -14,7 +14,7 @@ pathlib==1.0.1
 pathtools==0.1.2
 python-mimeparse==1.6.0
 pytoml==0.1.14
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 setproctitle==1.1.10
 six==1.11.0
